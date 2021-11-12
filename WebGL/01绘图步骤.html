@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script id="vs" type="x-shader/x-vertex">
+        void main() {
+            // gl_Position = vec4(1.0, 1.0, 1.0, 1.0) / 2.0
+            gl_Position = vec4(0.5, 0.5, 0.5, 1.0)
+            gl_PointSize = 100.0
+        }
+    </script>
+    <script id="fs" type="x-shader/x-vertex">
+        void main() {
+            gl_FragColor = vec4(1.0)
+        }
+    </script>
+    <script>
+        const canvas = document.getElementById('canvas')
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+        const gl = canvas.getContext('webgl')
+        const vsSource = document.getElementById('vs').innerText
+        const fsSource = document.getElementById('fs').innerText
+        initShader(gl, vsSource, fsSource)
+        gl.clearColor(0, 0, 0, 1)
+        gl.clear(gl.COLOR_BUFFER_BIT)
+        gl.drawArrays(gl.POINTS, 0, 1)
+
+        function initShader(gl, vsSource, fsSource) {
+            const program = gl.createProgram()
+            const vs = loadShader(gl, gl.VERTEX_SHADER, vsSource)
+            const fs = loadShader(gl, gl.FRAGMENT_SHADER, fsSource)
+            gl.attachShader(program, vs)
+            gl.attachShader(program, fs)
+            gl.linkProgram(program)
+            gl.useProgram(program)
+            gl.program = program
+        }
+
+        function loadShader(gl, type, source) {
+            const shader = gl.createShader(type)
+            gl.shaderSource(shader, source)
+            gl.compileShader(shader)
+            return shader
+        }
+    </script>
+</body>
+
+</html>
