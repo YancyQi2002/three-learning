@@ -1,15 +1,28 @@
 <script lang="ts">
-  import {defineComponent} from "vue";
+import {defineComponent, onMounted, ref} from "vue";
+  import { TEngine } from "./assets/ts/TEngine";
 
   export default defineComponent({
-    setup() {},
+    setup() {
+      const threeTarget = ref(null)
+
+      onMounted(() => {
+        const TE = new TEngine(threeTarget.value)
+      })
+
+      return {
+        threeTarget
+      }
+    },
   })
 </script>
 
 <template>
-  Hello three-learner
+  <div class="three-canvas" ref="threeTarget"></div>
 </template>
 
 <style>
-
+#app, .three-canvas {
+  @apply w-full h-full;
+}
 </style>

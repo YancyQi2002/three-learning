@@ -7,7 +7,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "9",
     "postcss": "7.0.39",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
@@ -15,6 +14,8 @@
     "vue": "^3.2.16"
   },
   "devDependencies": {
+    "@types/three": "^0.134.0",
+    "@types/typescript": "^2.0.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",

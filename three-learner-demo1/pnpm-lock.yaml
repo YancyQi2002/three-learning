@@ -1,10 +1,11 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@tailwindcss/postcss7-compat': ^2.2.17
+  '@types/three': ^0.134.0
+  '@types/typescript': ^2.0.0
   '@vitejs/plugin-vue': ^1.9.3
   autoprefixer: '9'
-  postcss: '7'
+  postcss: 7.0.39
   tailwindcss: npm:@tailwindcss/postcss7-compat@^2.2.17
   three: ^0.134.0
   typescript: ^4.4.3
@@ -13,7 +14,6 @@ specifiers:
   vue-tsc: ^0.3.0
 
 dependencies:
-  '@tailwindcss/postcss7-compat': 2.2.17
   autoprefixer: 9.8.8
   postcss: 7.0.39
   tailwindcss: /@tailwindcss/postcss7-compat/2.2.17
@@ -21,6 +21,8 @@ dependencies:
   vue: 3.2.21
 
 devDependencies:
+  '@types/three': 0.134.0
+  '@types/typescript': 2.0.0
   '@vitejs/plugin-vue': 1.9.4_vite@2.6.14
   typescript: 4.4.4
   vite: 2.6.14
@@ -145,6 +147,17 @@ packages:
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: false
+
+  /@types/three/0.134.0:
+    resolution: {integrity: sha512-4YB+99Rgqq27EjiYTItEoZtdjLnTh8W9LxowgpC9eWsjaQJIL4Kn/ZcUKAnW3gB/jS4hqGN8iqmid+RcUZDzpA==}
+    dev: true
+
+  /@types/typescript/2.0.0:
+    resolution: {integrity: sha1-xDNTnJi64oaCswfqp6D9IRW4PCg=}
+    deprecated: This is a stub types definition for TypeScript (https://github.com/Microsoft/TypeScript). TypeScript provides its own type definitions, so you don't need @types/typescript installed!
+    dependencies:
+      typescript: 4.4.4
+    dev: true
 
   /@vitejs/plugin-vue/1.9.4_vite@2.6.14:
     resolution: {integrity: sha512-0CZqaCoChriPTTtGkERy1LGPcYjGFpi2uYRhBPIkqJqUGV5JnJFhQAgh6oH9j5XZHfrRaisX8W0xSpO4T7S78A==}
