@@ -1,17 +1,38 @@
-import {WebGLRenderer} from "three";
+import {BoxBufferGeometry, Mesh, MeshStandardMaterial, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from "three";
 
 export class TEngine {
     private dom: HTMLElement
-    private renderer: WebGLRenderer
+    private renderer: WebGLRenderer // WebGL渲染器
+
+    private scene: Scene // 场景
+    private camera: PerspectiveCamera // 透视相机
 
     constructor(dom: HTMLElement) {
         this.dom = dom
         this.renderer = new WebGLRenderer()
+        this.scene = new Scene()
+        this.camera = new PerspectiveCamera(45, dom.offsetWidth / dom.offsetHeight, 1, 1000)
+        this.camera.position.set(20, 20, 20) // 设置相机位置
+        this.camera.lookAt(new Vector3(0, 0, 0)) // 设置相机朝向的位置
+        this.camera.up = new Vector3(0, 1, 0)
+
         console.log('TEngine实例了！')
-        console.log(this.dom)
+
+        console.log(dom)
         dom.appendChild(this.renderer.domElement)
         // this.renderer.domElement.width = dom.offsetWidth
         // this.renderer.domElement.height = dom.offsetHeight
         this.renderer.setSize(dom.offsetWidth, dom.offsetHeight, true)
+
+        const box: Mesh = new Mesh(
+            new BoxBufferGeometry(10, 10, 10),
+            new MeshStandardMaterial()
+        ) // 立方体
+
+        this.scene.add(box)
+
+        this.renderer.setClearColor('rgb(255, 255, 255)')
+        this.renderer.clearColor() // 清空颜色
+        this.renderer.render(this.scene, this.camera) // 渲染场景和相机
     }
 }
