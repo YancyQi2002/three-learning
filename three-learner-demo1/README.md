@@ -24,4 +24,8 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 
 ## 使场景动起来
 
-![使场景动起来.png](./src/assets/img/使场景动起来.gif)
+![使场景动起来.gif](./src/assets/img/使场景动起来.gif)
+
+## 增加性能监视器
+
+![增加性能监视器.png](./src/assets/img/增加性能监视器.png)

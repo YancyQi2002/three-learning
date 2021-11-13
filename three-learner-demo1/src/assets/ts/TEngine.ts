@@ -8,6 +8,7 @@ import {
     Vector3,
     WebGLRenderer
 } from "three";
+import Stats from "three/examples/jsm/libs/stats.module";
 
 export class TEngine {
     private dom: HTMLElement
@@ -27,8 +28,8 @@ export class TEngine {
 
         console.log('TEngine实例了！')
 
-        console.log(dom)
-        dom.appendChild(this.renderer.domElement)
+        // console.log(dom)
+
         // this.renderer.domElement.width = dom.offsetWidth
         // this.renderer.domElement.height = dom.offsetHeight
         this.renderer.setSize(dom.offsetWidth, dom.offsetHeight, true)
@@ -54,6 +55,14 @@ export class TEngine {
         // this.renderer.clearColor() // 清空颜色
         // this.renderer.render(this.scene, this.camera) // 渲染场景和相机
 
+        // 初始性能监视器
+        const stats = Stats()
+        const statsDom = stats.domElement
+        statsDom.style.position = 'fixed'
+        statsDom.style.top = '6px'
+        statsDom.style.right = '6px'
+        statsDom.style.left = 'unset'
+
         // 时效性渲染
 
         // setInterval(() => {
@@ -72,8 +81,12 @@ export class TEngine {
             this.camera.position.x += -.01
 
             this.renderer.render(this.scene, this.camera)
+            stats.update()
             requestAnimationFrame(renderFun)
         }
         renderFun()
+
+        dom.appendChild(this.renderer.domElement)
+        dom.appendChild(statsDom)
     }
 }
