@@ -33,3 +33,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 ## 添加轨道控制器
 
 ![添加轨道控制器.gif](./src/assets/img/添加轨道控制器.gif)
+
+## 添加抗锯齿处理
+
+![添加抗锯齿处理.png](./src/assets/img/添加抗锯齿处理.png)
