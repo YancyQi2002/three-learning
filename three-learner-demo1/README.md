@@ -12,12 +12,16 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 
 ## 渲染立方体
 
-![立方体.png](./src/assets/立方体.png)
+![立方体.png](./src/assets/img/立方体.png)
 
 ## 渲染一个有颜色的立方体
 
-![一个有颜色的立方体.png](./src/assets/一个有颜色的立方体.png)
+![一个有颜色的立方体.png](./src/assets/img/一个有颜色的立方体.png)
 
 ## 增加场景辅助
 
-![增加场景辅助.png](./src/assets/增加场景辅助.png)
+![增加场景辅助.png](./src/assets/img/增加场景辅助.png)
+
+## 使场景动起来
+
+![使场景动起来.png](./src/assets/img/使场景动起来.gif)

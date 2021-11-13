@@ -52,6 +52,28 @@ export class TEngine {
 
         // this.renderer.setClearColor('rgb(255, 255, 255)')
         // this.renderer.clearColor() // 清空颜色
-        this.renderer.render(this.scene, this.camera) // 渲染场景和相机
+        // this.renderer.render(this.scene, this.camera) // 渲染场景和相机
+
+        // 时效性渲染
+
+        // setInterval(() => {
+        //     console.log(1)
+        //     this.renderer.render(this.scene, this.camera)
+        // }, 1000 / 60)
+
+        const renderFun = () => {
+            // console.log(1)
+
+            // 更改 box 的路径
+            box.position.x += -.01
+            box.rotation.y += .001
+
+            // 更改 camera 的路径
+            this.camera.position.x += -.01
+
+            this.renderer.render(this.scene, this.camera)
+            requestAnimationFrame(renderFun)
+        }
+        renderFun()
     }
 }
