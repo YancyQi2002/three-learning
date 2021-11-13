@@ -29,3 +29,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 ## 增加性能监视器
 
 ![增加性能监视器.png](./src/assets/img/增加性能监视器.png)
+
+## 添加轨道控制器
+
+![添加轨道控制器.gif](./src/assets/img/添加轨道控制器.gif)

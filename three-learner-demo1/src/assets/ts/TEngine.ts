@@ -1,14 +1,18 @@
 import {
-    AmbientLight, AxesHelper,
-    BoxBufferGeometry, GridHelper,
+    AmbientLight,
+    AxesHelper,
+    BoxBufferGeometry,
+    GridHelper,
     Mesh,
     MeshStandardMaterial,
+    MOUSE,
     PerspectiveCamera,
     Scene,
     Vector3,
     WebGLRenderer
 } from "three";
 import Stats from "three/examples/jsm/libs/stats.module";
+import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 
 export class TEngine {
     private dom: HTMLElement
@@ -63,6 +67,16 @@ export class TEngine {
         statsDom.style.right = '6px'
         statsDom.style.left = 'unset'
 
+        // 初始 orbitControls 轨道控制器
+        const orbitControls: OrbitControls = new OrbitControls(this.camera, this.renderer.domElement)
+        // orbitControls.autoRotate = true // 设置自动旋转
+        orbitControls.enableDamping = true // 阻尼惯性
+        orbitControls.mouseButtons = {
+            LEFT: null as unknown as MOUSE,
+            MIDDLE: MOUSE.DOLLY, // 移动
+            RIGHT: MOUSE.ROTATE  // 旋转
+        }
+
         // 时效性渲染
 
         // setInterval(() => {
@@ -78,7 +92,8 @@ export class TEngine {
             box.rotation.y += .001
 
             // 更改 camera 的路径
-            this.camera.position.x += -.01
+            // this.camera.position.x += -.01
+            orbitControls.update()
 
             this.renderer.render(this.scene, this.camera)
             stats.update()
