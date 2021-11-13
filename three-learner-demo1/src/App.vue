@@ -1,6 +1,7 @@
 <script lang="ts">
-import {defineComponent, onMounted, ref} from "vue";
+  import {defineComponent, onMounted, ref} from "vue";
   import { TEngine } from "./assets/ts/TEngine";
+  import { basicObjectList } from "./assets/ts/TBasicObject";
 
   export default defineComponent({
     setup() {
@@ -8,6 +9,7 @@ import {defineComponent, onMounted, ref} from "vue";
 
       onMounted(() => {
         const TE = new TEngine(threeTarget.value)
+        TE.addObject(...basicObjectList)
       })
 
       return {

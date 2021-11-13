@@ -37,3 +37,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 ## 添加抗锯齿处理
 
 ![添加抗锯齿处理.png](./src/assets/img/添加抗锯齿处理.png)
+
+## 丰富场景物体，进行项目模块分割
+
+![丰富场景物体，进行项目模块分割.png](./src/assets/img/丰富场景物体进行项目模块分割.png)

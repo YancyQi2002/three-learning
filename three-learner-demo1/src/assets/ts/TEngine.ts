@@ -1,11 +1,9 @@
 import {
     AmbientLight,
     AxesHelper,
-    BoxBufferGeometry,
     GridHelper,
-    Mesh,
-    MeshStandardMaterial,
     MOUSE,
+    Object3D,
     PerspectiveCamera,
     Scene,
     Vector3,
@@ -43,19 +41,19 @@ export class TEngine {
         // this.renderer.domElement.height = dom.offsetHeight
         this.renderer.setSize(dom.offsetWidth, dom.offsetHeight, true)
 
-        const box: Mesh = new Mesh(
-            new BoxBufferGeometry(10, 10, 10),
-            new MeshStandardMaterial({
-                color: 'rgb(255, 0, 0)'
-            })
-        ) // 立方体
+        // const box: Mesh = new Mesh(
+        //     new BoxBufferGeometry(10, 10, 10),
+        //     new MeshStandardMaterial({
+        //         color: 'rgb(255, 0, 0)'
+        //     })
+        // ) // 立方体
 
         const ambientLight: AmbientLight = new AmbientLight('rgb(255, 255, 255)', 1) // 环境光
 
         const axesHelper: AxesHelper = new AxesHelper(500) // 辅助坐标轴
         const gridHelper: GridHelper = new GridHelper(500, 20, 'rgb(200, 200, 200)', 'rgb(100, 100, 100)') // 辅助网格
 
-        this.scene.add(box)
+        // this.scene.add(box)
         this.scene.add(ambientLight)
         this.scene.add(axesHelper)
         this.scene.add(gridHelper)
@@ -93,8 +91,8 @@ export class TEngine {
             // console.log(1)
 
             // 更改 box 的路径
-            box.position.x += -.01
-            box.rotation.y += .001
+            // box.position.x += -.01
+            // box.rotation.y += .001
 
             // 更改 camera 的路径
             // this.camera.position.x += -.01
@@ -108,5 +106,11 @@ export class TEngine {
 
         dom.appendChild(this.renderer.domElement)
         dom.appendChild(statsDom)
+    }
+
+    addObject(...object: Object3D) {
+        object.forEach(elem => {
+            this.scene.add(elem)
+        })
     }
 }
