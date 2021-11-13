@@ -1,6 +1,6 @@
 import {
-    AmbientLight,
-    BoxBufferGeometry,
+    AmbientLight, AxesHelper,
+    BoxBufferGeometry, GridHelper,
     Mesh,
     MeshStandardMaterial,
     PerspectiveCamera,
@@ -42,8 +42,13 @@ export class TEngine {
 
         const ambientLight: AmbientLight = new AmbientLight('rgb(255, 255, 255)', 1) // 环境光
 
+        const axesHelper: AxesHelper = new AxesHelper(500) // 辅助坐标轴
+        const gridHelper: GridHelper = new GridHelper(500, 20, 'rgb(200, 200, 200)', 'rgb(100, 100, 100)') // 辅助网格
+
         this.scene.add(box)
         this.scene.add(ambientLight)
+        this.scene.add(axesHelper)
+        this.scene.add(gridHelper)
 
         // this.renderer.setClearColor('rgb(255, 255, 255)')
         // this.renderer.clearColor() // 清空颜色
