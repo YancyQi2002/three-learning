@@ -12,5 +12,8 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 
 ## 渲染立方体
 
-
 ![立方体.png](./src/assets/立方体.png)
+
+## 渲染一个有颜色的立方体
+
+![一个有颜色的立方体.png](./src/assets/一个有颜色的立方体.png)
