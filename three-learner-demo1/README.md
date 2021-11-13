@@ -41,3 +41,9 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 ## 丰富场景物体，进行项目模块分割
 
 ![丰富场景物体，进行项目模块分割.png](./src/assets/img/丰富场景物体进行项目模块分割.png)
+
+## 添加 canvas 贴图编辑器，比较 canvas 2d 与 three.js 中的物体，了解物体、几何、材质的关系
+
+![比较canvas2d与three.js中的物体1.png](./src/assets/img/比较canvas2d与three.js中的物体1.png)
+
+![比较canvas2d与three.js中的物体2.png](./src/assets/img/比较canvas2d与three.js中的物体2.png)
