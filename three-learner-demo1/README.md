@@ -52,3 +52,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 
 ![添加点光源让物体更真实.png](./src/assets/img/添加点光源让物体更真实.png)
 
+## 添加光源辅助，可视化光源调试
+
+![添加光源辅助可视化光源调试.png](./src/assets/img/添加光源辅助可视化光源调试.png)
+

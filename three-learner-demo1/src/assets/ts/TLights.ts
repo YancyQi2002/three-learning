@@ -33,13 +33,13 @@ export const lightsList: Object3D[] = []
 
 const ambientLight: AmbientLight = new AmbientLight('rgb(255, 255, 255)', .3) // 环境光
 
-const pointLight: PointLight = new PointLight(
+export const pointLight: PointLight = new PointLight(
     'rgb(255, 255, 255)',
     .6,
     200,
     .1
-)
+) // 点光
 
-pointLight.position.set(20, 20, 20)
+pointLight.position.set(20, 20, 20) // 点光位置
 
 lightsList.push(ambientLight, pointLight)

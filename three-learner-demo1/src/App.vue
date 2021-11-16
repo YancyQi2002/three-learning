@@ -4,6 +4,7 @@
   import { basicObjectList } from "./assets/ts/TBasicObject";
   // import { TCanvasTextureEditor } from "./assets/ts/TCanvasTextureEditor";
   import { lightsList } from "./assets/ts/TLights";
+  import { helperList } from "./assets/ts/THelper";
 
   export default defineComponent({
     setup() {
@@ -13,6 +14,7 @@
         const TE = new TEngine(threeTarget.value)
         TE.addObject(...basicObjectList)
         TE.addObject(...lightsList)
+        TE.addObject(...helperList)
 
         // const testCanvas = new TCanvasTextureEditor()
         // testCanvas.draw(ctx => {

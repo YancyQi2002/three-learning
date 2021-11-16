@@ -1,0 +1,15 @@
+import {AxesHelper, GridHelper, Object3D, PointLightHelper} from "three";
+import {pointLight} from "./TLights";
+
+export const helperList: Object3D[] = []
+
+const axesHelper: AxesHelper = new AxesHelper(500) // 辅助坐标轴
+const gridHelper: GridHelper = new GridHelper(500, 20, 'rgb(200, 200, 200)', 'rgb(100, 100, 100)') // 辅助网格
+
+const pointLightHelper: PointLightHelper = new PointLightHelper(
+    pointLight,
+    pointLight.distance,
+    pointLight.color
+) // 点光辅助
+
+helperList.push(axesHelper, gridHelper, pointLightHelper)
