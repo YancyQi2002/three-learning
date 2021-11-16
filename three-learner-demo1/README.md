@@ -47,3 +47,8 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 ![比较canvas2d与three.js中的物体1.png](./src/assets/img/比较canvas2d与three.js中的物体1.png)
 
 ![比较canvas2d与three.js中的物体2.png](./src/assets/img/比较canvas2d与three.js中的物体2.png)
+
+## 添加点光源，让物体更真实
+
+![添加点光源让物体更真实.png](./src/assets/img/添加点光源让物体更真实.png)
+
