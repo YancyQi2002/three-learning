@@ -77,7 +77,10 @@ const stage: Mesh = new Mesh(
     })
 )
 
-console.log((stage.material as MeshStandardMaterial).color) // Object { r: 0.5882352941176471, g: 0.5882352941176471, b: 0.5882352941176471 }
+stage.castShadow = true
+stage.receiveShadow = true // 设置接收阴影
+
+// console.log((stage.material as MeshStandardMaterial).color) // Object { r: 0.5882352941176471, g: 0.5882352941176471, b: 0.5882352941176471 }
 
 stage.position.y = -5
 
@@ -88,6 +91,9 @@ const box: Mesh = new Mesh(
         color: 'red'
     })
 )
+
+box.castShadow = true // 设置可以产生阴影
+box.receiveShadow = true
 
 box.position.y = 10
 

@@ -26,6 +26,8 @@ export class TEngine {
             antialias: true // 抗锯齿
         })
 
+        this.renderer.shadowMap.enabled = true // 允许渲染器进行对阴影的渲染
+
         this.scene = new Scene()
 
         this.camera = new PerspectiveCamera(45, dom.offsetWidth / dom.offsetHeight, 1, 1000)

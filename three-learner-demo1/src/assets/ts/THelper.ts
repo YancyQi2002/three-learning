@@ -1,5 +1,5 @@
-import {AxesHelper, GridHelper, Object3D, PointLightHelper} from "three";
-import {pointLight} from "./TLights";
+import {AxesHelper, GridHelper, Object3D, PointLightHelper, SpotLightHelper} from "three";
+import {pointLight, spotLight} from "./TLights";
 
 export const helperList: Object3D[] = []
 
@@ -12,4 +12,9 @@ const pointLightHelper: PointLightHelper = new PointLightHelper(
     pointLight.color
 ) // 点光辅助
 
-helperList.push(axesHelper, gridHelper, pointLightHelper)
+const spotLightHelper: SpotLightHelper = new SpotLightHelper(
+    spotLight,
+    spotLight.color
+) // 聚光辅助
+
+helperList.push(axesHelper, gridHelper, pointLightHelper, spotLightHelper)

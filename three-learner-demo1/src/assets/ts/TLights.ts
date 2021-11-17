@@ -1,4 +1,4 @@
-import {AmbientLight, Object3D, PointLight} from "three";
+import {AmbientLight, Object3D, PointLight, SpotLight} from "three";
 
 export const lightsList: Object3D[] = []
 
@@ -42,4 +42,17 @@ export const pointLight: PointLight = new PointLight(
 
 pointLight.position.set(20, 20, 20) // 点光位置
 
-lightsList.push(ambientLight, pointLight)
+export const spotLight: SpotLight = new SpotLight(
+    'rgb(255, 0, 255)',
+    1,
+    200,
+    Math.PI / 180 * 30, // 弧度制
+    0,
+    0
+) // 聚光灯
+
+spotLight.castShadow = true // 设置光是可以产生阴影的
+
+spotLight.position.set(-50, 50, -50) // 聚光灯位置
+
+lightsList.push(ambientLight, pointLight, spotLight)
